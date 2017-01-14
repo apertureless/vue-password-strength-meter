@@ -1,6 +1,8 @@
-# vue-password-strength-meter
+# 🔓 vue-password-strength-meter
 
 Interactive password strength meter based on [zxcvbn](https://github.com/dropbox/zxcvbn) for vue.js
+
+![demo](https://github.com/apertureless/vue-password-strength-meter/tree/master/static/demo.gif)
 
 🚨 Still in early alpha. Not production ready yet!!
 
