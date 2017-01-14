@@ -1,6 +1,52 @@
 # vue-password-strength-meter
 
-> Interactive password strength meter based on zxcvbn
+Interactive password strength meter based on [zxcvbn](https://github.com/dropbox/zxcvbn) for vue.js
+
+🚨 Still in early alpha. Not production ready yet!!
+
+## Demo
+
+[Demo here](https://apertureless.github.io/vue-password-strength-meter/)
+
+## Install
+
+`npm install vue-password-strength-meter` or `yarn add vue-password-strength-meter`
+
+## Usage
+
+```javascript
+<script>
+  import Password from 'vue-password-strength-meter'
+  export default {
+    components: { Password }
+  }
+</script>
+
+<template>
+  <password></password>
+</template>
+```
+
+## Props
+
+| Prop   |      Type      |  Default Value | Description
+|----------|:-------------:|------|------|
+| id |  String | password | input field id attribute |
+| placeholder |  String | Please enter your password | input field placeholder attribute |
+| name |  String | password | input field name attribute |
+| required |  Boolean | true | input field required attribute |
+| secureLength |  Number | 7 | password min length |
+| badge |  Boolean | true | display password count badge |
+| defaultClass |  String | Password__field | input field class |
+| errorClass |  String | has-error | error class for password count badge |
+| successClass |  String | is-success | success class for password count badge |
+| strengthMeterClass |  String | Password__strength-meter | strength-meter class |
+| strengthMeterFillClass |  String | Password__strength-meter--fill | strength-meter class for individual data fills |
+
+## Customizing
+
+You can customize the styling of the input field, badge and strength-meter by passing your own css classes
+to `defaultClass`, `strengthMeterClass` etc.
 
 ## Build Setup
 

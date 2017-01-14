@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <h1>Password Strength Meter</h1>
+    <password></password>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import Password from './components/PasswordStrengthMeter.vue'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    Password
   }
 }
 </script>
