@@ -219,7 +219,8 @@
     padding: 3px;
     width: 30px;
     height: 15px;
-    line-height: 1;
+    font-size: 14px;
+    line-height: 1.1;
   }
 
   .has-error {
