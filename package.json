@@ -16,7 +16,6 @@
     "security"
   ],
   "main": "dist/vue-password-strength-meter.js",
-
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
@@ -26,7 +25,7 @@
     "release": "webpack --progress --hide-modules --config  ./build/webpack.release.js && NODE_ENV=production webpack --progress --hide-modules --config  ./build/webpack.release.min.js"
   },
   "dependencies": {
-    "vue": "^2.1.0",
+    "vue": "^2.1.10",
     "zxcvbn": "^4.4.1"
   },
   "devDependencies": {
@@ -81,7 +80,7 @@
     "url-loader": "^0.5.7",
     "vue-loader": "^10.0.0",
     "vue-style-loader": "^1.0.0",
-    "vue-template-compiler": "^2.1.0",
+    "vue-template-compiler": "^2.1.10",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.8.3",
     "webpack-hot-middleware": "^2.12.2",
