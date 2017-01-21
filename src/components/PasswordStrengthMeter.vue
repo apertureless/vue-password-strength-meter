@@ -32,46 +32,102 @@
 
   export default {
     props: {
+      /**
+       * Input field id
+       * @type {String}
+       */
       id: {
         type: String,
         default: 'password'
       },
+      /**
+       * Input field placeholder text
+       * @type {String}
+       */
       placeholder: {
         type: String,
         default: 'Please enter your password'
       },
+      /**
+       * Input field name
+       * @type {String}
+       */
       name: {
         type: String,
         default: 'password'
       },
+      /**
+       * Input field required attribute
+       * @type {Boolean}
+       */
       required: {
         type: Boolean,
         default: true
       },
+      /**
+       * Password min length.
+       * Right now only visual for the badge
+       * @type {Number}
+       */
       secureLength: {
         type: Number,
         default: 7
       },
+      /**
+       * Display badge:
+       * The badge shows your
+       * password character count
+       * up to the defined secureLength
+       * @type {Boolean}
+       */
       badge: {
         type: Boolean,
         default: true
       },
+      /**
+       * CSS Class for the Input field
+       * @type {String}
+       */
       defaultClass: {
         type: String,
         default: 'Password__field'
       },
+      /**
+       * CSS Class for the badge
+       * if a password does not match
+       * the secureLength. Later for errors
+       * @type {String}
+       */
       errorClass: {
         type: String,
         default: 'has-error'
       },
+      /**
+       * CSS Class for the badge
+       * if a password does match
+       * the secureLength. Later for
+       * success messages possible.
+       * @type {String}
+       */
       successClass: {
         type: String,
         default: 'is-success'
       },
+      /**
+       * CSS class for styling the
+       * strength meter bars.
+       * @type {String}
+       */
       strengthMeterClass: {
         type: String,
         default: 'Password__strength-meter'
       },
+      /**
+       * strengthMeterFillClass sets the
+       * individual strength width and fill
+       * color of the strength meter bars.
+       * @type {String}
+       */
       strengthMeterFillClass: {
         type: String,
         default: 'Password__strength-meter--fill'
