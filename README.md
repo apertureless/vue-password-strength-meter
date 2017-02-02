@@ -1,6 +1,5 @@
 # 🔓 vue-password-strength-meter
 [![npm version](https://badge.fury.io/js/vue-password-strength-meter.svg)](https://badge.fury.io/js/vue-password-strength-meter)
-![npm dependencies](https://david-dm.org/apertureless/vue-password-strength-meter.svg)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/apertureless/vue-password-strength-meter/blob/master/LICENSE.txt)
 
 Interactive password strength meter based on [zxcvbn](https://github.com/dropbox/zxcvbn) for vue.js
