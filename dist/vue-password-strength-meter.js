@@ -451,42 +451,52 @@ return /******/ (function(modules) { // webpackBootstrap
 	      type: String,
 	      default: 'password'
 	    },
+
 	    placeholder: {
 	      type: String,
 	      default: 'Please enter your password'
 	    },
+
 	    name: {
 	      type: String,
 	      default: 'password'
 	    },
+
 	    required: {
 	      type: Boolean,
 	      default: true
 	    },
+
 	    secureLength: {
 	      type: Number,
 	      default: 7
 	    },
+
 	    badge: {
 	      type: Boolean,
 	      default: true
 	    },
+
 	    defaultClass: {
 	      type: String,
 	      default: 'Password__field'
 	    },
+
 	    errorClass: {
 	      type: String,
 	      default: 'has-error'
 	    },
+
 	    successClass: {
 	      type: String,
 	      default: 'is-success'
 	    },
+
 	    strengthMeterClass: {
 	      type: String,
 	      default: 'Password__strength-meter'
 	    },
+
 	    strengthMeterFillClass: {
 	      type: String,
 	      default: 'Password__strength-meter--fill'
@@ -1802,6 +1812,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  bruteforce_guesses: function(match) {
 	    var guesses, min_guesses;
 	    guesses = Math.pow(BRUTEFORCE_CARDINALITY, match.token.length);
+	    if (guesses === Number.POSITIVE_INFINITY) {
+	      guesses = Number.MAX_VALUE;
+	    }
 	    min_guesses = match.token.length === 1 ? MIN_SUBMATCH_GUESSES_SINGLE_CHAR + 1 : MIN_SUBMATCH_GUESSES_MULTI_CHAR + 1;
 	    return Math.max(guesses, min_guesses);
 	  },
@@ -1826,7 +1839,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return base_guesses * match.token.length;
 	  },
 	  MIN_YEAR_SPACE: 20,
-	  REFERENCE_YEAR: 2016,
+	  REFERENCE_YEAR: new Date().getFullYear(),
 	  regex_guesses: function(match) {
 	    var char_class_bases, year_space;
 	    char_class_bases = {
@@ -2170,7 +2183,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  get_dictionary_match_feedback: function(match, is_sole_match) {
 	    var ref, result, suggestions, warning, word;
-	    warning = match.dictionary_name === 'passwords' ? is_sole_match && !match.l33t && !match.reversed ? match.rank <= 10 ? 'This is a top-10 common password' : match.rank <= 100 ? 'This is a top-100 common password' : 'This is a very common password' : match.guesses_log10 <= 4 ? 'This is similar to a commonly used password' : void 0 : match.dictionary_name === 'english' ? is_sole_match ? 'A word by itself is easy to guess' : void 0 : (ref = match.dictionary_name) === 'surnames' || ref === 'male_names' || ref === 'female_names' ? is_sole_match ? 'Names and surnames by themselves are easy to guess' : 'Common names and surnames are easy to guess' : '';
+	    warning = match.dictionary_name === 'passwords' ? is_sole_match && !match.l33t && !match.reversed ? match.rank <= 10 ? 'This is a top-10 common password' : match.rank <= 100 ? 'This is a top-100 common password' : 'This is a very common password' : match.guesses_log10 <= 4 ? 'This is similar to a commonly used password' : void 0 : match.dictionary_name === 'english_wikipedia' ? is_sole_match ? 'A word by itself is easy to guess' : void 0 : (ref = match.dictionary_name) === 'surnames' || ref === 'male_names' || ref === 'female_names' ? is_sole_match ? 'Names and surnames by themselves are easy to guess' : 'Common names and surnames are easy to guess' : '';
 	    suggestions = [];
 	    word = match.token;
 	    if (word.match(scoring.START_UPPER)) {
