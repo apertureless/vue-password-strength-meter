@@ -457,6 +457,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      default: 'Please enter your password'
 	    },
 
+	    value: {
+	      type: String
+	    },
+
 	    name: {
 	      type: String,
 	      default: 'password'
@@ -508,6 +512,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	  },
 
+
+	  methods: {
+	    emitValue: function emitValue(value) {
+	      this.password = value;
+	      this.$emit('input', value);
+	    }
+	  },
 
 	  computed: {
 	    passwordStrength: function passwordStrength() {
@@ -2220,12 +2231,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, [_c('div', {
 	    staticClass: "Password__group"
 	  }, [_c('input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.password),
-	      expression: "password"
-	    }],
+	    ref: "input",
 	    class: [_vm.defaultClass],
 	    attrs: {
 	      "type": "password",
@@ -2235,12 +2241,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      "required": _vm.required
 	    },
 	    domProps: {
-	      "value": _vm._s(_vm.password)
+	      "value": _vm.value
 	    },
 	    on: {
 	      "input": function($event) {
-	        if ($event.target.composing) { return; }
-	        _vm.password = $event.target.value
+	        _vm.emitValue($event.target.value)
 	      }
 	    }
 	  }), _vm._v(" "), (_vm.badge) ? _c('div', {
