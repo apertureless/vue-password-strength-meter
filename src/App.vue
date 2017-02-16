@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Password Strength Meter</h1>
-    <password></password>
+    <password v-model="password"></password>
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   name: 'app',
   components: {
     Password
+  },
+  data () {
+    return {
+      password: null
+    }
   }
 }
 </script>

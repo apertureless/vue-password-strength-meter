@@ -3,8 +3,10 @@
     <div class="Password__group">
       <input
         type="password"
-        v-model="password"
-        v-bind:class="[defaultClass]"
+        ref="input"
+        v-bind:value="value"
+        v-on:input="emitValue($event.target.value)"
+        :class="[defaultClass]"
         :name="name"
         :id="id"
         :placeholder="placeholder"
@@ -47,6 +49,13 @@
       placeholder: {
         type: String,
         default: 'Please enter your password'
+      },
+      /**
+       * Binded value
+       * @type {Object}
+       */
+      value: {
+        type: String
       },
       /**
        * Input field name
@@ -136,6 +145,17 @@
     data () {
       return {
         password: null
+      }
+    },
+
+    methods: {
+      /**
+       * Emit passowrd value to parent component
+       * @param  {String} value password typed in
+       */
+      emitValue (value) {
+        this.password = value
+        this.$emit('input', value)
       }
     },
 
