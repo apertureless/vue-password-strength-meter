@@ -4,9 +4,13 @@
   "description": "Interactive password strength meter based on zxcvbn",
   "author": "Jakub Juszczak <jakub@posteo.de>",
   "private": false,
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:apertureless/vue-password-strength-meter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/apertureless/vue-password-strength-meter/issues"
   },
   "keywords": [
     "vue.js",
@@ -16,25 +20,27 @@
     "security"
   ],
   "main": "dist/vue-password-strength-meter.js",
+  "browser": "dist/vue-password-strength-meter.min.js",
   "scripts": {
     "play": "vue-play start",
     "play:build": "vue-play build",
     "dev": "node build/dev-server.js",
-    "build": "node build/build.js",
+    "build": "yarn run release",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
+    "prepublish": "yarn run lint && yarn run build",
     "release": "webpack --progress --hide-modules --config  ./build/webpack.release.js && NODE_ENV=production webpack --progress --hide-modules --config  ./build/webpack.release.min.js"
   },
   "files": [
     "dist"
   ],
   "dependencies": {
-    "vue": "^2.2.1",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
+    "babel-cli": "^6.23.0",
     "babel-core": "^6.0.0",
     "babel-eslint": "^7.0.0",
     "babel-loader": "^6.0.0",
@@ -83,6 +89,7 @@
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "url-loader": "^0.5.7",
+    "vue": "^2.2.1",
     "vue-loader": "^11.1.3",
     "vue-play": "^3.1.1",
     "vue-play-cli": "^1.1.1",
