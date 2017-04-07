@@ -14,7 +14,11 @@ module.exports = {
   output: {
     filename: './dist/[name].js',
     library: 'Password',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    umdNamedDefine: true
+  },
+  externals: {
+    'zxcvbn': 'zxcvbn'
   },
   module: {
     preLoaders: [
