@@ -11,15 +11,15 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
   <img src="/static/demo.gif" alt="🔓" title="🔓 Demo" />
 </p>
 
-## Demo
+## 📺 Demo
 
 [Demo here](https://apertureless.github.io/vue-password-strength-meter/)
 
-## Install
+## 🔧 Install
 
 `yarn add vue-password-strength-meter zxcvbn`
 
-## Usage
+## 👈 Usage
 
 ```javascript
 <script>
@@ -55,7 +55,7 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 | strengthMeterClass |  String | Password__strength-meter | strength-meter class |
 | strengthMeterFillClass |  String | Password__strength-meter--fill | strength-meter class for individual data fills |
 
-## Customizing
+## 💅 Customizing
 
 You can customize the styling of the input field, badge and strength-meter by passing your own css classes
 to `defaultClass`, `strengthMeterClass` etc.
