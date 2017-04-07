@@ -17,7 +17,7 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 
 ## Install
 
-`npm install vue-password-strength-meter` or `yarn add vue-password-strength-meter`
+`yarn add vue-password-strength-meter zxcvbn`
 
 ## Usage
 
