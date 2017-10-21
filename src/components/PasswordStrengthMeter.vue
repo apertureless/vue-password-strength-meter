@@ -109,7 +109,7 @@
        */
       errorClass: {
         type: String,
-        default: 'has-error'
+        default: 'Password__badge--error'
       },
       /**
        * CSS Class for the badge
@@ -120,7 +120,7 @@
        */
       successClass: {
         type: String,
-        default: 'is-success'
+        default: 'Password__badge--success'
       },
       /**
        * CSS class for styling the
@@ -299,11 +299,11 @@
     line-height: 1.1;
   }
 
-  .has-error {
+  .Password__badge--error {
     background: red;
   }
 
-  .is-success {
+  .Password__badge--success {
     background: #1bbf1b;
   }
 </style>
