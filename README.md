@@ -50,8 +50,8 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 | secureLength |  Number | 7 | password min length |
 | badge |  Boolean | true | display password count badge |
 | defaultClass |  String | Password__field | input field class |
-| errorClass |  String | has-error | error class for password count badge |
-| successClass |  String | is-success | success class for password count badge |
+| errorClass |  String | Password__badge--error | error class for password count badge |
+| successClass |  String | Password__badge--success | success class for password count badge |
 | strengthMeterClass |  String | Password__strength-meter | strength-meter class |
 | strengthMeterFillClass |  String | Password__strength-meter--fill | strength-meter class for individual data fills |
 
