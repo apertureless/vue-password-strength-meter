@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/apertureless/vue-password-strength-meter/compare/v1.2.0...v1.2.1) (2018-04-09)
+
+
+### Bug Fixes
+
+* **button:** Add prevent to toggle button click event ([1759628](https://github.com/apertureless/vue-password-strength-meter/commit/1759628))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/apertureless/vue-password-strength-meter/compare/v1.1.1...v1.2.0) (2018-04-09)
 
