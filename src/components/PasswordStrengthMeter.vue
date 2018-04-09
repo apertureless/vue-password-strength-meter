@@ -26,7 +26,8 @@
           class="Password__toggle">
             <button
               class="btn-clean"
-              @click="togglePassword()">
+              :aria-label="showPasswordLabel"
+              @click.prevent="togglePassword()">
               <svg v-if="this.$data._showPassword" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <title>Show Password</title>
                 <path d="M12 9c1.641 0 3 1.359 3 3s-1.359 3-3 3-3-1.359-3-3 1.359-3 3-3zM12 17.016c2.766 0 5.016-2.25 5.016-5.016s-2.25-5.016-5.016-5.016-5.016 2.25-5.016 5.016 2.25 5.016 5.016 5.016zM12 4.5c5.016 0 9.281 3.094 11.016 7.5-1.734 4.406-6 7.5-11.016 7.5s-9.281-3.094-11.016-7.5c1.734-4.406 6-7.5 11.016-7.5z"></path>
@@ -245,6 +246,10 @@
        */
       inputType () {
         return this.$data._showPassword || this.showPassword ? 'text' : 'password'
+      },
+
+      showPasswordLabel () {
+        return this.$data._showPassword || this.showPassword ? 'Hide password' : 'Show password'
       }
     },
 
