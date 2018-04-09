@@ -2,7 +2,7 @@
   <div class="Password">
     <div class="Password__group">
       <input
-        type="password"
+        :type="inputType"
         ref="input"
         v-bind:value="value"
         v-on:input="emitValue($event.target.value)"
@@ -12,14 +12,31 @@
         :placeholder="placeholder"
         :required="required"
       >
-
-      <div
-        class="Password__badge"
-        v-bind:class="[isSecure ? successClass : '', !isSecure && isActive ? errorClass : '' ]"
-        v-cloak
-        v-if="badge"
-        >
-        {{ passwordCount }}
+      <div class="Password__icons">
+        <div
+          v-if="badge"
+          v-bind:class="[isSecure ? successClass : '', !isSecure && isActive ? errorClass : '' ]"
+          class="Password__badge"
+          v-cloak
+          >
+          {{ passwordCount }}
+        </div>
+        <div
+          v-if="toggle"
+          class="Password__toggle">
+            <button
+              class="btn-clean"
+              @click="togglePassword()">
+              <svg v-if="this.$data._showPassword" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <title>Show Password</title>
+                <path d="M12 9c1.641 0 3 1.359 3 3s-1.359 3-3 3-3-1.359-3-3 1.359-3 3-3zM12 17.016c2.766 0 5.016-2.25 5.016-5.016s-2.25-5.016-5.016-5.016-5.016 2.25-5.016 5.016 2.25 5.016 5.016 5.016zM12 4.5c5.016 0 9.281 3.094 11.016 7.5-1.734 4.406-6 7.5-11.016 7.5s-9.281-3.094-11.016-7.5c1.734-4.406 6-7.5 11.016-7.5z"></path>
+              </svg>
+              <svg v-else version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <title>Hide Password</title>
+                <path d="M11.859 9h0.141c1.641 0 3 1.359 3 3v0.188zM7.547 9.797c-0.328 0.656-0.563 1.406-0.563 2.203 0 2.766 2.25 5.016 5.016 5.016 0.797 0 1.547-0.234 2.203-0.563l-1.547-1.547c-0.188 0.047-0.422 0.094-0.656 0.094-1.641 0-3-1.359-3-3 0-0.234 0.047-0.469 0.094-0.656zM2.016 4.266l1.266-1.266 17.719 17.719-1.266 1.266c-1.124-1.11-2.256-2.213-3.375-3.328-1.359 0.563-2.813 0.844-4.359 0.844-5.016 0-9.281-3.094-11.016-7.5 0.797-1.969 2.109-3.656 3.75-4.969-0.914-0.914-1.812-1.844-2.719-2.766zM12 6.984c-0.656 0-1.266 0.141-1.828 0.375l-2.156-2.156c1.219-0.469 2.578-0.703 3.984-0.703 5.016 0 9.234 3.094 10.969 7.5-0.75 1.875-1.922 3.469-3.422 4.734l-2.906-2.906c0.234-0.563 0.375-1.172 0.375-1.828 0-2.766-2.25-5.016-5.016-5.016z"></path>
+              </svg>
+            </button>
+        </div>
       </div>
     </div>
 
@@ -94,6 +111,24 @@
         default: true
       },
       /**
+       * Show password toggle:
+       * Show icon to toggle
+       * the password visibility
+       */
+      toggle: {
+        type: Boolean,
+        default: false
+      },
+      /**
+       * Prop to toggle the
+       * cleartext password if
+       * toggle is disabled
+       */
+      showPassword: {
+        type: Boolean,
+        default: false
+      },
+      /**
        * CSS Class for the Input field
        * @type {String}
        */
@@ -144,7 +179,8 @@
     },
     data () {
       return {
-        password: null
+        password: null,
+        _showPassword: false
       }
     },
 
@@ -156,6 +192,15 @@
       emitValue (value) {
         this.password = value
         this.$emit('input', value)
+      },
+      togglePassword () {
+        if (this.$data._showPassword) {
+          this.$emit('hide')
+          this.$data._showPassword = false
+        } else {
+          this.$emit('show')
+          this.$data._showPassword = true
+        }
       }
     },
 
@@ -193,12 +238,26 @@
        */
       passwordCount () {
         return this.password && (this.password.length > this.secureLength ? `${this.secureLength}+` : this.password.length)
+      },
+      /**
+       * Changing the input type from password to text
+       * based on the local _showPassword data or the showPassword prop
+       */
+      inputType () {
+        return this.$data._showPassword || this.showPassword ? 'text' : 'password'
+      }
+    },
+
+    watch: {
+      passwordStrength (score) {
+        this.$emit('score', score)
+        this.$emit('feedback', zxcvbn(this.password).feedback)
       }
     }
   }
 </script>
 
-<style>
+<style lang="scss">
   [v-cloak] {
     display: none;
   }
@@ -285,11 +344,24 @@
     width: 100%;
   }
 
+  .Password__icons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .Password__toggle {
+    line-height: 1.1;
+    margin-right: 13px;
+  }
+
   .Password__badge {
-    float: right;
     position: relative;
-    bottom: 33px;
-    right: 10px;
     color: white;
     border-radius: 6px;
     padding: 3px;
@@ -297,6 +369,7 @@
     height: 15px;
     font-size: 14px;
     line-height: 1.1;
+    margin-right: 13px;
   }
 
   .Password__badge--error {
@@ -306,4 +379,23 @@
   .Password__badge--success {
     background: #1bbf1b;
   }
+
+  .btn-clean {
+    appearance: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #777777;
+    padding: 0;
+
+    svg {
+      fill: currentColor;
+    }
+
+    &:hover, &:focus {
+      color: #404B69;
+    }
+  }
+
 </style>
