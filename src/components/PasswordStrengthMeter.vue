@@ -3,7 +3,7 @@
     <div class="Password__group">
       <input
         :type="inputType"
-        ref="input"
+        :ref="referanceValue"
         v-bind:value="value"
         v-on:input="emitValue($event.target.value)"
         :class="[defaultClass]"
@@ -128,6 +128,14 @@
       showPassword: {
         type: Boolean,
         default: false
+      },
+      /**
+       * Prop to change the 
+       * ref of the input
+       */
+      referanceValue: {
+        type: String,
+        default: 'input'
       },
       /**
        * CSS Class for the Input field
