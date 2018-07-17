@@ -11,6 +11,7 @@
         :id="id"
         :placeholder="placeholder"
         :required="required"
+        :disabled="disabled"
       >
       <div class="Password__icons">
         <div
@@ -90,6 +91,14 @@
       required: {
         type: Boolean,
         default: true
+      },
+      /**
+       * Input field disabled attribute
+       * @type {Boolean}
+       */
+      disabled: {
+        type: Boolean,
+        default: false
       },
       /**
        * Password min length.
