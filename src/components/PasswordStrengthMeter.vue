@@ -6,7 +6,7 @@
         ref="input"
         v-bind:value="value"
         v-on:input="emitValue($event.target.value)"
-        :class="[defaultClass]"
+        :class="[defaultClass, disabled ? disabledClass : '']"
         :name="name"
         :id="id"
         :placeholder="placeholder"
@@ -145,6 +145,14 @@
       defaultClass: {
         type: String,
         default: 'Password__field'
+      },
+      /**
+       * CSS Class for the disabled Input field
+       * @type {String}
+       */
+      disabledClass: {
+        type: String,
+        default: 'Password__field--disabled'
       },
       /**
        * CSS Class for the badge
@@ -356,6 +364,11 @@
     font-size: 14px;
     padding: 13px;
     width: 100%;
+  }
+
+  .Password__field--disabled {
+    background-color: #f6f6f6;
+    border: 1px solid #f6f6f6;
   }
 
   .Password__icons {
