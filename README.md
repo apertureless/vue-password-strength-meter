@@ -88,6 +88,7 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 | successClass |  String | Password__badge--success | success class for password count badge |
 | strengthMeterClass |  String | Password__strength-meter | strength-meter class |
 | strengthMeterFillClass |  String | Password__strength-meter--fill | strength-meter class for individual data fills |
+| showStrengthMeter |  Boolean | true | Hide the Strength Meter if you want to implement your own |
 
 ## Events
 
