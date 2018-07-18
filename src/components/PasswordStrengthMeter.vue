@@ -136,7 +136,7 @@
       referanceValue: {
         type: String,
         default: 'input'
-       },
+      },
        /**
        * Prop to toggle the
        * strength Meter if
