@@ -130,9 +130,9 @@
         default: false
       },
       /**
-       * Prop to change the 
-       * ref of the input
-       */
+      * Prop to change the 
+      * ref of the input
+      */
       referanceValue: {
         type: String,
         default: 'input'
