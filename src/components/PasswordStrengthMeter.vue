@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <div v-bind:class="[strengthMeterClass]">
+    <div v-if="showStrengthMeter" v-bind:class="[strengthMeterClass]">
       <div v-bind:class="[strengthMeterFillClass]" :data-score="passwordStrength"></div>
     </div>
   </div>
@@ -128,6 +128,16 @@
       showPassword: {
         type: Boolean,
         default: false
+      },
+      /**
+       * Prop to toggle the
+       * strength Meter if
+       * User wants to implement
+       * their own
+       */
+      showStrengthMeter: {
+        type: Boolean,
+        default: true
       },
       /**
        * CSS Class for the Input field
