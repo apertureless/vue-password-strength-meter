@@ -79,11 +79,13 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 | placeholder |  String | Please enter your password | input field placeholder attribute |
 | name |  String | password | input field name attribute |
 | required |  Boolean | true | input field required attribute |
+| disabled |  Boolean | false | input field disabled attribute |
 | secureLength |  Number | 7 | password min length |
 | badge |  Boolean | true | display password count badge |
 | toggle |  Boolean | false | show button to toggle password visibility |
 | showPassword |  Boolean | false | If you are not using the `toggle` button you can directly show / hide the password with this prop |
 | defaultClass |  String | Password__field | input field class |
+| disabledClass |  String | Password__field--disabled | disabled input field class |
 | errorClass |  String | Password__badge--error | error class for password count badge |
 | successClass |  String | Password__badge--success | success class for password count badge |
 | strengthMeterClass |  String | Password__strength-meter | strength-meter class |
