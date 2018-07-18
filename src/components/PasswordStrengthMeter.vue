@@ -130,7 +130,7 @@
         default: false
       },
       /**
-      * Prop to change the 
+      * Prop to change the
       * ref of the input
       */
       referanceValue: {
