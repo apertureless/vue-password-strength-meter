@@ -3,7 +3,7 @@
     <div class="Password__group">
       <input
         :type="inputType"
-        ref="input"
+        :ref="referanceValue"
         v-bind:value="value"
         v-on:input="emitValue($event.target.value)"
         :class="[defaultClass]"
@@ -130,6 +130,14 @@
         default: false
       },
       /**
+      * Prop to change the
+      * ref of the input
+      */
+      referanceValue: {
+        type: String,
+        default: 'input'
+       },
+       /**
        * Prop to toggle the
        * strength Meter if
        * User wants to implement
