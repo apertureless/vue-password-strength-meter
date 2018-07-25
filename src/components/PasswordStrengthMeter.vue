@@ -1,17 +1,20 @@
 <template>
   <div class="Password">
-    <div class="Password__group">
+    <div
+      v-if="!strengthMeterOnly" 
+      class="Password__group"
+    >
       <input
         :type="inputType"
         :ref="referanceValue"
-        v-bind:value="value"
-        v-on:input="emitValue($event.target.value)"
         :class="[defaultClass, disabled ? disabledClass : '']"
         :name="name"
         :id="id"
         :placeholder="placeholder"
         :required="required"
         :disabled="disabled"
+        v-bind:value="value"
+        @input="evt => emitValue(evt.target.value)"
       >
       <div class="Password__icons">
         <div
@@ -157,6 +160,16 @@
         default: true
       },
       /**
+       * Prop to toggle the
+       * input element if
+       * User wants to implement
+       * their own input element
+       */
+      strengthMeterOnly: {
+        type: Boolean,
+        default: false
+      },
+      /**
        * CSS Class for the Input field
        * @type {String}
        */
@@ -221,14 +234,6 @@
     },
 
     methods: {
-      /**
-       * Emit passowrd value to parent component
-       * @param  {String} value password typed in
-       */
-      emitValue (value) {
-        this.password = value
-        this.$emit('input', value)
-      },
       togglePassword () {
         if (this.$data._showPassword) {
           this.$emit('hide')
@@ -237,6 +242,10 @@
           this.$emit('show')
           this.$data._showPassword = true
         }
+      },
+      emitValue (value) {
+        this.$emit('input', value)
+        this.password = value
       }
     },
 
@@ -289,6 +298,11 @@
     },
 
     watch: {
+      value (newValue) {
+        if (this.strengthMeterOnly) {
+          this.emitValue(newValue)
+        }
+      },
       passwordStrength (score) {
         this.$emit('score', score)
         this.$emit('feedback', zxcvbn(this.password).feedback)
