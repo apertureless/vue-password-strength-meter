@@ -26,6 +26,7 @@
           v-if="toggle"
           class="Password__toggle">
             <button
+              type="button"
               class="btn-clean"
               :aria-label="showPasswordLabel"
               @click.prevent="togglePassword()">
