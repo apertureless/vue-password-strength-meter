@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/apertureless/vue-password-strength-meter/compare/v1.3.0...v1.3.1) (2018-08-29)
+
+
+### Bug Fixes
+
+* **labels:** Fix show/hide labels ([74789c3](https://github.com/apertureless/vue-password-strength-meter/commit/74789c3))
+
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/apertureless/vue-password-strength-meter/compare/v1.2.1...v1.3.0) (2018-07-18)
 
