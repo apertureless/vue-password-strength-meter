@@ -91,6 +91,7 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 | strengthMeterClass |  String | Password__strength-meter | strength-meter class |
 | strengthMeterFillClass |  String | Password__strength-meter--fill | strength-meter class for individual data fills |
 | showStrengthMeter |  Boolean | true | Hide the Strength Meter if you want to implement your own |
+| strengthMeterOnly |  Boolean | false | Hides the built-in input if you want to implement your own |
 
 ## Events
 
