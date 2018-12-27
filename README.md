@@ -71,6 +71,27 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 </script>
 ```
 
+### With custom input
+
+```html
+
+<template>
+  <div>
+    <input type="password" v-model="password">
+    <password v-model="password" :strength-meter-only="true"/>
+  </div>
+</template>
+
+<script>
+  import Password from 'vue-password-strength-meter'
+  export default {
+    components: { Password },
+    data: () => ({
+      password: null
+    })
+  }
+</script>
+```
 ## Props
 
 | Prop   |      Type      |  Default Value | Description
@@ -101,6 +122,7 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 - `@hide` will be emitted if hiding the password
 - `@score` will return the zxcvbn score (Integer from 0-4) [ℹ] (https://github.com/dropbox/zxcvbn#usage)
 - `@feedback` will return an zxcvbn feedback object with `suggestion` and `warning`
+
 
 ## 💅 Customizing
 
