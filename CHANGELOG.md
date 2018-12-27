@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/apertureless/vue-password-strength-meter/compare/v1.3.2...v1.4.0) (2018-12-27)
+
+
+### Features
+
+* ✨ Allow the usage of built-in input to be optional ([#19](https://github.com/apertureless/vue-password-strength-meter/issues/19)) ([b2201bc](https://github.com/apertureless/vue-password-strength-meter/commit/b2201bc))
+* Add blur and focus events ([6031382](https://github.com/apertureless/vue-password-strength-meter/commit/6031382))
+* Add props for the icon labels ([12c6d01](https://github.com/apertureless/vue-password-strength-meter/commit/12c6d01)), closes [#26](https://github.com/apertureless/vue-password-strength-meter/issues/26)
+
+
+
 <a name="1.3.2"></a>
 ## [1.3.2](https://github.com/apertureless/vue-password-strength-meter/compare/v1.3.1...v1.3.2) (2018-08-29)
 
