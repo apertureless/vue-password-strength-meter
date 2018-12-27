@@ -74,7 +74,6 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 ### With custom input
 
 ```html
-
 <template>
   <div>
     <input type="password" v-model="password">
@@ -113,6 +112,8 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 | strengthMeterFillClass |  String | Password__strength-meter--fill | strength-meter class for individual data fills |
 | showStrengthMeter |  Boolean | true | Hide the Strength Meter if you want to implement your own |
 | strengthMeterOnly |  Boolean | false | Hides the built-in input if you want to implement your own |
+| labelHide |  String | 'Hide Password' | Label for the hide icon
+| labelShow |  String | 'Show Password' | Label for the show icon
 
 ## Events
 
