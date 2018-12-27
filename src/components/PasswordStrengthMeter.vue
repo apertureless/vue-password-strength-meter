@@ -14,7 +14,9 @@
         :required="required"
         :disabled="disabled"
         v-bind:value="value"
-        @input="evt => emitValue(evt.target.value)"
+        @input="evt => emitValue('input', evt.target.value)"
+        @blur="evt => emitValue('blur', evt.target.value)"
+        @focus="evt => emitValue('focus', evt.target.value)"
       >
       <div class="Password__icons">
         <div
@@ -258,8 +260,8 @@
           this.$data._showPassword = true
         }
       },
-      emitValue (value) {
-        this.$emit('input', value)
+      emitValue (type, value) {
+        this.$emit(type, value)
         this.password = value
       }
     },
