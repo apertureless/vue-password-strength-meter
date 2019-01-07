@@ -317,7 +317,7 @@
     watch: {
       value (newValue) {
         if (this.strengthMeterOnly) {
-          this.emitValue(newValue)
+          this.emitValue('input', newValue)
         }
       },
       passwordStrength (score) {
