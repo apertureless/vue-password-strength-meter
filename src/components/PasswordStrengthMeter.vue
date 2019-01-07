@@ -359,16 +359,16 @@
     border-style: solid;
     border-width: 0 5px 0 5px;
     position: absolute;
-    width: 80px;
+    width: 20%;
     z-index: 10;
   }
 
   .Password__strength-meter:before {
-    left: 70px;
+    left: 20%;
   }
 
   .Password__strength-meter:after {
-    right: 70px;
+    right: 20%;
   }
 
   .Password__strength-meter--fill {
