@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/apertureless/vue-password-strength-meter/compare/v1.4.0...v1.4.1) (2019-01-07)
+
+
+### Bug Fixes
+
+* **strength-meter:** Fix responsive behaviour breaks ([#29](https://github.com/apertureless/vue-password-strength-meter/issues/29)) ([#30](https://github.com/apertureless/vue-password-strength-meter/issues/30)) ([6ced855](https://github.com/apertureless/vue-password-strength-meter/commit/6ced855))
+* Add missing emit event type if only strength-meter is active ([ed135c9](https://github.com/apertureless/vue-password-strength-meter/commit/ed135c9)), closes [#32](https://github.com/apertureless/vue-password-strength-meter/issues/32)
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/apertureless/vue-password-strength-meter/compare/v1.3.2...v1.4.0) (2018-12-27)
 
