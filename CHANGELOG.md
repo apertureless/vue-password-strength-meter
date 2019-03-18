@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.2](https://github.com/apertureless/vue-password-strength-meter/compare/v1.4.1...v1.4.2) (2019-03-18)
+
+
+### Bug Fixes
+
+* Add missing production env to remove dev settings ([4a21c74](https://github.com/apertureless/vue-password-strength-meter/commit/4a21c74)), closes [#33](https://github.com/apertureless/vue-password-strength-meter/issues/33)
+
+
+
 <a name="1.4.1"></a>
 ## [1.4.1](https://github.com/apertureless/vue-password-strength-meter/compare/v1.4.0...v1.4.1) (2019-01-07)
 
