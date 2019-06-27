@@ -446,6 +446,9 @@
     font-size: 14px;
     line-height: 1.1;
     margin-right: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .Password__badge--error {
