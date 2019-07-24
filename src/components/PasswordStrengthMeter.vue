@@ -13,6 +13,7 @@
         :placeholder="placeholder"
         :required="required"
         :disabled="disabled"
+        :autocomplete="autocomplete"
         v-bind:value="value"
         @input="evt => emitValue('input', evt.target.value)"
         @blur="evt => emitValue('blur', evt.target.value)"
@@ -99,12 +100,12 @@
         default: true
       },
       /**
-       * Input field disabled attribute
-       * @type {Boolean}
+       * Input autocomplete
+       * @type {String}
        */
-      disabled: {
-        type: Boolean,
-        default: false
+      autocomplete: {
+        type: String,
+        default: 'new-password'
       },
       /**
        * Password min length.
