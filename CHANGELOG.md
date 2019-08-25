@@ -1,6 +1,18 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.5.0](https://github.com/apertureless/vue-password-strength-meter/compare/v1.4.2...v1.5.0) (2019-08-25)
+
+
+### Bug Fixes
+
+* **style:** Fix password badge style ([#35](https://github.com/apertureless/vue-password-strength-meter/issues/35)) ([404688f](https://github.com/apertureless/vue-password-strength-meter/commit/404688f))
+
+
+### Features
+
+* Add autocomplete property ([#37](https://github.com/apertureless/vue-password-strength-meter/issues/37)) ([fcea8b5](https://github.com/apertureless/vue-password-strength-meter/commit/fcea8b5))
 
 ## [1.4.2](https://github.com/apertureless/vue-password-strength-meter/compare/v1.4.1...v1.4.2) (2019-03-18)
 
