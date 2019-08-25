@@ -13,6 +13,7 @@
         :placeholder="placeholder"
         :required="required"
         :disabled="disabled"
+        :autocomplete="autocomplete"
         v-bind:value="value"
         @input="evt => emitValue('input', evt.target.value)"
         @blur="evt => emitValue('blur', evt.target.value)"
@@ -74,6 +75,14 @@
       placeholder: {
         type: String,
         default: 'Please enter your password'
+      },
+      /**
+       * Input field autocomplete
+       * @type {String}
+       */
+      autocomplete: {
+        type: String,
+        default: 'new-password'
       },
       /**
        * Binded value
