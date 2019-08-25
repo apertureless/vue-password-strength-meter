@@ -116,6 +116,7 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 | strengthMeterOnly |  Boolean | false | Hides the built-in input if you want to implement your own |
 | labelHide |  String | 'Hide Password' | Label for the hide icon
 | labelShow |  String | 'Show Password' | Label for the show icon
+| autocomplete |  String | 'new-password' | Input field autocomplete property
 
 ## Events
 
