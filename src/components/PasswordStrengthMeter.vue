@@ -250,6 +250,13 @@
       labelHide: {
         type: String,
         default: 'Hide Password'
+      },
+      /**
+       * @type String
+       */
+      userInputs: {
+        type: Array,
+        default: []
       }
     },
     data () {
@@ -281,7 +288,7 @@
        * @return {Number} Password Strength Score
        */
       passwordStrength () {
-        return this.password ? zxcvbn(this.password).score : null
+        return this.password ? zxcvbn(this.password, (this.userInputs.length >= 1 ? this.userInputs : null)).score : null
       },
 
       /**
