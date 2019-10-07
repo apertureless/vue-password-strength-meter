@@ -5,16 +5,11 @@
       class="Password__group"
     >
       <input
+        v-bind="$attrs"
         :type="inputType"
-        :ref="referanceValue"
+        :ref="referenceValue"
         :class="[defaultClass, disabled ? disabledClass : '']"
-        :name="name"
-        :id="id"
-        :placeholder="placeholder"
-        :required="required"
-        :disabled="disabled"
-        :autocomplete="autocomplete"
-        v-bind:value="value"
+        :value="value"
         @input="evt => emitValue('input', evt.target.value)"
         @blur="evt => emitValue('blur', evt.target.value)"
         @focus="evt => emitValue('focus', evt.target.value)"
@@ -22,7 +17,7 @@
       <div class="Password__icons">
         <div
           v-if="badge"
-          v-bind:class="[isSecure ? successClass : '', !isSecure && isActive ? errorClass : '' ]"
+          :class="[isSecure ? successClass : '', !isSecure && isActive ? errorClass : '' ]"
           class="Password__badge"
           v-cloak
           >
@@ -49,8 +44,8 @@
       </div>
     </div>
 
-    <div v-if="showStrengthMeter" v-bind:class="[strengthMeterClass]">
-      <div v-bind:class="[strengthMeterFillClass]" :data-score="passwordStrength"></div>
+    <div v-if="showStrengthMeter" :class="[strengthMeterClass]">
+      <div :class="[strengthMeterFillClass]" :data-score="passwordStrength"></div>
     </div>
   </div>
 </template>
@@ -61,59 +56,11 @@
   export default {
     props: {
       /**
-       * Input field id
-       * @type {String}
-       */
-      id: {
-        type: String,
-        default: 'password'
-      },
-      /**
-       * Input field placeholder text
-       * @type {String}
-       */
-      placeholder: {
-        type: String,
-        default: 'Please enter your password'
-      },
-      /**
-       * Input field autocomplete
-       * @type {String}
-       */
-      autocomplete: {
-        type: String,
-        default: 'new-password'
-      },
-      /**
        * Binded value
        * @type {Object}
        */
       value: {
         type: String
-      },
-      /**
-       * Input field name
-       * @type {String}
-       */
-      name: {
-        type: String,
-        default: 'password'
-      },
-      /**
-       * Input field required attribute
-       * @type {Boolean}
-       */
-      required: {
-        type: Boolean,
-        default: true
-      },
-      /**
-       * Input field disabled attribute
-       * @type {Boolean}
-       */
-      disabled: {
-        type: Boolean,
-        default: false
       },
       /**
        * Password min length.
@@ -157,7 +104,7 @@
       * Prop to change the
       * ref of the input
       */
-      referanceValue: {
+      referenceValue: {
         type: String,
         default: 'input'
       },
