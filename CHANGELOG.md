@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/apertureless/vue-password-strength-meter/compare/v1.5.0...v1.6.0) (2019-11-01)
+
+
+### Features
+
+* Add zxcvbn user_inputs prop ([f0cc239](https://github.com/apertureless/vue-password-strength-meter/commit/f0cc239))
+
 ## [1.5.0](https://github.com/apertureless/vue-password-strength-meter/compare/v1.4.2...v1.5.0) (2019-08-25)
 
 
