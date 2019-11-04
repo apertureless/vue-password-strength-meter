@@ -256,7 +256,7 @@
        */
       userInputs: {
         type: Array,
-        default: []
+        default: () => []
       }
     },
     data () {
