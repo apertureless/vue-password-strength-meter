@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.1](https://github.com/apertureless/vue-password-strength-meter/compare/v1.6.0...v1.6.1) (2019-11-06)
+
+
+### Bug Fixes
+
+* Change default user_input prop value to factory function ([#44](https://github.com/apertureless/vue-password-strength-meter/issues/44)) ([b27a568](https://github.com/apertureless/vue-password-strength-meter/commit/b27a568))
+
 ## [1.6.0](https://github.com/apertureless/vue-password-strength-meter/compare/v1.5.0...v1.6.0) (2019-11-01)
 
 
