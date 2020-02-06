@@ -97,11 +97,6 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 
 | Prop   |      Type      |  Default Value | Description
 |----------|:-------------:|------|------|
-| id |  String | password | input field id attribute |
-| placeholder |  String | Please enter your password | input field placeholder attribute |
-| name |  String | password | input field name attribute |
-| required |  Boolean | true | input field required attribute |
-| disabled |  Boolean | false | input field disabled attribute |
 | secureLength |  Number | 7 | password min length |
 | badge |  Boolean | true | display password count badge |
 | toggle |  Boolean | false | show button to toggle password visibility |
@@ -116,8 +111,8 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 | strengthMeterOnly |  Boolean | false | Hides the built-in input if you want to implement your own |
 | labelHide |  String | 'Hide Password' | Label for the hide icon
 | labelShow |  String | 'Show Password' | Label for the show icon
-| autocomplete |  String | 'new-password' | Input field autocomplete property
 | userInputs | Array | empty array | Array of strings that zxcvbn will treat as an extra dictionary
+| referenceValue | String | 'input' | Prop to change the `ref` of the input. This way you can have the input outside of the component.
 
 ## Events
 
