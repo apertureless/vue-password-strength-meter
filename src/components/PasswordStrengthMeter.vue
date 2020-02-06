@@ -8,7 +8,7 @@
         v-bind="$attrs"
         :type="inputType"
         :ref="referenceValue"
-        :class="[defaultClass, disabled ? disabledClass : '']"
+        :class="[defaultClass, $attrs.disabled ? disabledClass : '']"
         :value="value"
         @input="evt => emitValue('input', evt.target.value)"
         @blur="evt => emitValue('blur', evt.target.value)"
