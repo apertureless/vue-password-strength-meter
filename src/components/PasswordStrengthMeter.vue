@@ -30,6 +30,7 @@
               type="button"
               class="btn-clean"
               :aria-label="showPasswordLabel"
+              tabindex="-1"
               @click.prevent="togglePassword()">
               <svg v-if="this.$data._showPassword" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <title>{{showPasswordLabel}}</title>
