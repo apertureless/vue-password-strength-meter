@@ -54,6 +54,8 @@
   import zxcvbn from 'zxcvbn'
 
   export default {
+    name: 'VuePasswordStrengthMeter',
+    inheritAttrs: false,
     props: {
       /**
        * Binded value
