@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.2](https://github.com/apertureless/vue-password-strength-meter/compare/v1.7.1...v1.7.2) (2020-04-30)
+
+
+### Bug Fixes
+
+* Add missing inheritAttrs: false so the root element does not bind attributes ([92dab66](https://github.com/apertureless/vue-password-strength-meter/commit/92dab666afc5b4709d573c9069bcc507eb715a6d)), closes [#48](https://github.com/apertureless/vue-password-strength-meter/issues/48)
+* Remove "show password" button from tabbing index ([#47](https://github.com/apertureless/vue-password-strength-meter/issues/47)) ([fe30cc6](https://github.com/apertureless/vue-password-strength-meter/commit/fe30cc64717f25cdaeef4578927b8513cfbbc0cc))
+
 ## [1.7.0](https://github.com/apertureless/vue-password-strength-meter/compare/v1.6.1...v1.7.0) (2020-02-06)
 
 
