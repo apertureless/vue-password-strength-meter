@@ -285,10 +285,10 @@
         if (this.strengthMeterOnly) {
           this.emitValue('input', newValue)
         }
+        this.$emit('feedback', zxcvbn(newValue).feedback)
       },
       passwordStrength (score) {
         this.$emit('score', score)
-        this.$emit('feedback', zxcvbn(this.password).feedback)
       }
     }
   }
