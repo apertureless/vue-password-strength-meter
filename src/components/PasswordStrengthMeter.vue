@@ -47,6 +47,10 @@
 
     <div v-if="showStrengthMeter" :class="[strengthMeterClass]">
       <div :class="[strengthMeterFillClass]" :data-score="passwordStrength"></div>
+      <div :class="[strengthMeterSeparatorClass]" :data-separator-index="'1'"></div>
+      <div :class="[strengthMeterSeparatorClass]" :data-separator-index="'2'"></div>
+      <div :class="[strengthMeterSeparatorClass]" :data-separator-index="'3'"></div>
+      <div :class="[strengthMeterSeparatorClass]" :data-separator-index="'4'"></div>
     </div>
   </div>
 </template>
@@ -188,6 +192,15 @@
         default: 'Password__strength-meter--fill'
       },
       /**
+       * CSS class for styling the
+       * strength meter separators.
+       * @type {String}
+       */
+      strengthMeterSeparatorClass: {
+        type: String,
+        default: 'Password__strength-meter--separator'
+      },
+      /**
        * Label for the show password icon
        */
       labelShow: {
@@ -308,33 +321,38 @@
     position: relative;
   }
 
+  $strengthMeterHeight : 3px;
+
   .Password__strength-meter {
     position: relative;
-    height: 3px;
+    height: $strengthMeterHeight;
     background: #DDD;
     margin: 10px auto 20px;
     border-radius: 3px;
 }
 
-  .Password__strength-meter:before, .Password__strength-meter:after {
-    content: '';
-    height: inherit;
-    background: transparent;
-    display: block;
-    border-color: #FFF;
-    border-style: solid;
-    border-width: 0 5px 0 5px;
+  .Password__strength-meter--separator {
+    background-color: #FFF;
+    width: 5px;
+    height: $strengthMeterHeight;
+    display: inline-block;
     position: absolute;
-    width: 20%;
-    z-index: 10;
   }
 
-  .Password__strength-meter:before {
+  .Password__strength-meter--separator[data-separator-index='1'] {
     left: 20%;
   }
 
-  .Password__strength-meter:after {
-    right: 20%;
+  .Password__strength-meter--separator[data-separator-index='2'] {
+    left: 40%;
+  }
+
+  .Password__strength-meter--separator[data-separator-index='3'] {
+    left: 60%;
+  }
+
+  .Password__strength-meter--separator[data-separator-index='4'] {
+    left: 80%;
   }
 
   .Password__strength-meter--fill {
