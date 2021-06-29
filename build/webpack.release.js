@@ -70,12 +70,12 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.optimize.OccurenceOrderPlugin()
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false
+    //   }
+    // }),
+    // new webpack.optimize.OccurenceOrderPlugin()
     // new ExtractTextPlugin(utils.assetsPath('css/[name].[contenthash].css')),
   ]
 }

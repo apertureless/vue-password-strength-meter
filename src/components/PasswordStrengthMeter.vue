@@ -9,7 +9,7 @@
         :type="inputType"
         :ref="referenceValue"
         :class="[defaultClass, $attrs.disabled ? disabledClass : '']"
-        :value="value"
+        :value="modelValue"
         @input="evt => emitValue('input', evt.target.value)"
         @blur="evt => emitValue('blur', evt.target.value)"
         @focus="evt => emitValue('focus', evt.target.value)"
@@ -62,7 +62,7 @@
        * Binded value
        * @type {Object}
        */
-      value: {
+      modelValue: {
         type: String
       },
       /**
@@ -227,7 +227,11 @@
         }
       },
       emitValue (type, value) {
-        this.$emit(type, value)
+        if (type === 'input') {
+          this.$emit('update:modelValue', value)
+        } else {
+          this.$emit(type, value)
+        }
         this.password = value
       }
     },
@@ -281,7 +285,7 @@
     },
 
     watch: {
-      value (newValue) {
+      modelValue (newValue) {
         if (this.strengthMeterOnly) {
           this.emitValue('input', newValue)
         }
