@@ -19,17 +19,20 @@
     "password strength",
     "security"
   ],
-  "main": "dist/vue-password-strength-meter.js",
-  "browser": "dist/vue-password-strength-meter.min.js",
+  "main": "dist/vue-password-strength-meter.umd.js",
+  "browser": "dist/vue-password-strength-meter.min.umd.js",
+  "module": "dist/vue-password-strength-meter.es.js",
   "scripts": {
     "play": "vue-play start",
     "play:build": "vue-play build",
     "dev": "node build/dev-server.js",
-    "build": "npm run release",
+    "build": "npm run release && npm run release-vite && npm run release-vite-min",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
     "prepublish": "npm run lint && npm run build",
-    "release": "cross-env NODE_ENV=production webpack --progress --hide-modules --config  ./build/webpack.release.js && cross-env NODE_ENV=production webpack --progress --hide-modules --config  ./build/webpack.release.min.js"
+    "release": "cross-env NODE_ENV=production webpack --progress --hide-modules --config  ./build/webpack.release.js && cross-env NODE_ENV=production webpack --progress --hide-modules --config  ./build/webpack.release.min.js",
+    "release-vite": "vite build",
+    "release-vite-min": "vite build -c vite.config.min.js"
   },
   "files": [
     "dist"
@@ -113,5 +116,11 @@
       "webpack",
       "webpack-merge"
     ]
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^1.2.4",
+    "@vue/compiler-sfc": "^3.1.2",
+    "sass": "^1.35.1",
+    "vite": "^2.3.8"
   }
 }
