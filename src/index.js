@@ -1,3 +1,3 @@
-import Password from './components/PasswordStrengthMeter.vue'
+import PasswordStrengthMeter from './components/PasswordStrengthMeter.vue'
 
-module.exports = Password
+export default PasswordStrengthMeter
