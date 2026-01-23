@@ -1,8 +1,7 @@
 # 🔓 vue-password-strength-meter
 
-[![Build Status](https://travis-ci.org/apertureless/vue-password-strength-meter.svg?branch=master)](https://travis-ci.org/apertureless/vue-password-strength-meter)
 [![npm version](https://badge.fury.io/js/vue-password-strength-meter.svg)](https://badge.fury.io/js/vue-password-strength-meter)
-[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+[![vue3](https://img.shields.io/badge/vue-3.x-brightgreen.svg)](https://vuejs.org/)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/apertureless/vue-password-strength-meter/blob/master/LICENSE.txt)
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C0C1WP7C)
@@ -31,6 +30,8 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 
 <script>
   import Password from 'vue-password-strength-meter'
+  import 'vue-password-strength-meter/style.css'
+
   export default {
     components: { Password },
     data: () => ({
@@ -55,6 +56,8 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 
 <script>
   import Password from 'vue-password-strength-meter'
+  import 'vue-password-strength-meter/style.css'
+
   export default {
     components: { Password },
     data: () => ({
@@ -85,6 +88,8 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 
 <script>
   import Password from 'vue-password-strength-meter'
+  import 'vue-password-strength-meter/style.css'
+
   export default {
     components: { Password },
     data: () => ({
@@ -93,6 +98,23 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
   }
 </script>
 ```
+
+### Composition API
+
+```html
+<template>
+  <password v-model="password" />
+</template>
+
+<script setup>
+  import { ref } from 'vue'
+  import Password from 'vue-password-strength-meter'
+  import 'vue-password-strength-meter/style.css'
+
+  const password = ref(null)
+</script>
+```
+
 ## Props
 
 | Prop   |      Type      |  Default Value | Description
@@ -135,20 +157,15 @@ to `defaultClass`, `strengthMeterClass` etc.
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload
 npm run dev
 
 # build for production with minification
 npm run build
 
-# run unit tests
-npm run unit
-
-# run all tests
+# run tests
 npm test
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 
 ## Support
