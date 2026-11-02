@@ -11,11 +11,12 @@ export default defineConfig({
       fileName: 'vue-password-strength-meter'
     },
     rollupOptions: {
-      external: ['vue', 'zxcvbn'],
+      external: ['vue', '@zxcvbn-ts/core', '@zxcvbn-ts/language-en'],
       output: {
         globals: {
           vue: 'Vue',
-          zxcvbn: 'zxcvbn'
+          '@zxcvbn-ts/core': 'zxcvbnTsCore',
+          '@zxcvbn-ts/language-en': 'zxcvbnTsLanguageEn'
         }
       }
     }

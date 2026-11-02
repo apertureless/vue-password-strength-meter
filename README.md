@@ -6,7 +6,7 @@
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C0C1WP7C)
 
-Interactive password strength meter based on [zxcvbn](https://github.com/dropbox/zxcvbn) for vue.js
+Interactive password strength meter based on [zxcvbn-ts](https://github.com/zxcvbn-ts/zxcvbn) for vue.js
 
 <p align="center">
   <img src="/static/demo.gif" alt="🔓" title="🔓 Demo" />
@@ -18,7 +18,7 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 
 ## 🔧 Install
 
-`yarn add vue-password-strength-meter zxcvbn`
+`yarn add vue-password-strength-meter @zxcvbn-ts/core @zxcvbn-ts/language-en`
 
 ## 👈 Usage
 
@@ -142,7 +142,7 @@ Interactive password strength meter based on [zxcvbn](https://github.com/dropbox
 
 - `@show` will be emitted if showing the password
 - `@hide` will be emitted if hiding the password
-- `@score` will return the zxcvbn score (Integer from 0-4) [ℹ] (https://github.com/dropbox/zxcvbn#usage)
+- `@score` will return the zxcvbn score (Integer from 0-4) [ℹ] (https://github.com/zxcvbn-ts/zxcvbn)
 - `@feedback` will return an zxcvbn feedback object with `suggestion` and `warning`
 
 

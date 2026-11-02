@@ -39,7 +39,8 @@
   },
   "peerDependencies": {
     "vue": "^3.0.0",
-    "zxcvbn": "^4.4.2"
+    "@zxcvbn-ts/core": "^3.0.0",
+    "@zxcvbn-ts/language-en": "^3.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",
@@ -49,6 +50,7 @@
     "vite": "^5.0.0",
     "vitest": "^1.0.0",
     "vue": "^3.4.0",
-    "zxcvbn": "^4.4.2"
+    "@zxcvbn-ts/core": "^3.0.0",
+    "@zxcvbn-ts/language-en": "^3.0.0"
   }
 }

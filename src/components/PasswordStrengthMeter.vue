@@ -52,7 +52,18 @@
 </template>
 
 <script>
-  import zxcvbn from 'zxcvbn'
+  import { zxcvbn, zxcvbnOptions } from '@zxcvbn-ts/core'
+  import * as zxcvbnCommonPackage from '@zxcvbn-ts/language-en'
+
+  const options = {
+    translations: zxcvbnCommonPackage.translations,
+    graphs: zxcvbnCommonPackage.adjacencyGraphs,
+    dictionary: {
+      ...zxcvbnCommonPackage.dictionary,
+    },
+  }
+
+  zxcvbnOptions.setOptions(options)
 
   export default {
     name: 'VuePasswordStrengthMeter',
